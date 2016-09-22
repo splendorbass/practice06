@@ -6,41 +6,38 @@ public class MyStack implements Stack {
 	private int top = 0;
 	
 	public MyStack( int a ){
-		//str = new String[a];
-		resize(a);
+		str = new String[a];
+		//resize(a);
 	}
 
-	public void resize( int size ){
-		String[] str2 = new String[size];
-		for( int i = 0 ; i < top ; i++){
-			str2[i] = str[i];
-		}
-		str = str2;
-	}
-	
-	@Override
-	public void push(String item) {
-		if( top == str.length ){
-			resize(str.length*3);
-		}
-		str[top++] = item;
-	}
-	
+//	public void resize( int size ){
+//		String[] str2 = new String[size];
+//		for( int i = 0 ; i < top ; i++){
+//			str2[i] = str[i];
+//		}
+//		str = str2;
+//	}
+//	
 //	@Override
 //	public void push(String item) {
-//		if( str.length == top ){
-//			String[] str2= new String[str.length*2];
-//			for(int i = 0 ; i < str.length; i++){
-//				str2[i] = str[i];
-//			}
-//			str = str2;
-//			str[top] = item;
-//			top++;
-//		}else{
-//			str[top] = item;
-//			top++;
+//		if( top == str.length ){
+//			resize(str.length*3);
 //		}
+//		str[top++] = item;
 //	}
+
+	@Override
+	public void push(String item) {
+		if( str.length == top ){
+			String[] str2= new String[str.length*2];
+			for(int i = 0 ; i < str.length; i++){
+				str2[i] = str[i];
+			}
+			str = str2;
+		}
+			str[top] = item;
+			top++;
+	}
 
 	@Override
 	public String pop() throws MyStackException {
