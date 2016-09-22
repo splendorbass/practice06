@@ -10,8 +10,8 @@ public class MainApp {
 			stack.push("!!!");
 			stack.push("java");
 			stack.push(".");
-
-			while (!stack.isEmpty()) {
+			//stack.showStack();
+			while ( stack.isEmpty() == false ) {
 				System.out.println(stack.pop());
 			}
 

@@ -5,4 +5,5 @@ public interface Stack {
 	public String pop() throws MyStackException;
 	public boolean isEmpty();
 	public int size();
+	public void showStack();
 }
